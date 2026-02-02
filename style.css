@@ -131,8 +131,15 @@ p { color: rgba(255,255,255,0.88); }
     gap: 60px;
     margin-top: 40px;
 }
+.compare-panel {
+  border-radius: 26px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+  transition: transform 0.3s ease;
+  background: transparent; /* ⬅️ ВАЖНО */
+}
 
-.compare-panel { background: rgba(255,255,255,0.04); border-radius: 26px; padding: 28px; border: 1px solid rgba(255,200,150,0.25); box-shadow: 0 20px 40px rgba(0,0,0,0.5); transition: transform 0.3s ease; }
 .compare-panel:hover { transform: translateY(-4px); box-shadow: 0 25px 50px rgba(0,0,0,0.55); }
 
 .panel-inner-grid {
@@ -170,6 +177,36 @@ p { color: rgba(255,255,255,0.88); }
 
 .panel-content h3 { margin-bottom: 8px; }
 .muted { opacity: 0.8; font-size: 15px; }
+/* ============================= */
+/* COMPARISON — BEFORE / AFTER */
+/* ============================= */
+
+/* ДО КУРСА */
+.compare-panel.before {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,80,60,0.12),
+      rgba(120,20,15,0.18)
+    );
+  border: 1px solid rgba(255,120,90,0.35);
+}
+
+/* ПОСЛЕ КУРСА */
+.compare-panel.after {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(90,200,140,0.14),
+      rgba(40,120,80,0.18)
+    );
+  border: 1px solid rgba(120,220,170,0.35);
+}
+.comparison-wrapper {
+  background: rgba(255,255,255,0.02);
+  border-radius: 36px;
+  padding: 60px 50px;
+}
 
 /* ============================= */
 /* AUTHOR SECTION */
@@ -527,4 +564,281 @@ p { color: rgba(255,255,255,0.88); }
     font-size: 14px;
     padding-left: 32px;
   }
+}
+/* ============================= */
+/* WHY IMPORTANT — BACKGROUND IMAGE */
+/* ============================= */
+
+.with-bg-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.why-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* сама девушка */
+.why-bg-girl {
+  position: absolute;
+  right: -60px;       /* выходит за край */
+  top: 80%;           /* пониже от верха секции */
+  width: 700px;       /* чуть больше */
+  max-width: 55vw;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .why-bg-girl {
+    display: none;
+  }
+}
+.why-bg-girl {
+  filter: drop-shadow(-20px 0 40px rgba(0,0,0,0.25));
+}
+/* ============================= */
+/* AUTHOR CARD BLOCK */
+/* ============================= */
+.author-card {
+  display: flex;
+  gap: 30px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,200,150,0.25);
+  border-radius: 22px;
+  padding: 30px;
+  align-items: flex-start;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.author-photo img {
+  width: 600px;
+  height: auto;
+  border-radius: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+.author-text h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.author-text p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.author-text ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.author-text ul li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* ============================= */
+/* MOBILE ADAPTATION */
+/* ============================= */
+@media (max-width: 768px) {
+
+  .author-mobile-bg {
+    position: relative;
+    padding: 70px 16px 50px;
+    overflow: hidden;
+  }
+
+  /* Оранжевая линия снизу */
+  .author-mobile-bg::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: #ffb347;
+  }
+
+  /* ТЕКСТОВАЯ ЧАСТЬ */
+  .author-mobile-bg .author-text {
+    position: relative;
+    z-index: 2;
+    max-width: 65%;          /* ⬅️ ключ: текст уже */
+    padding-right: 10px;
+  }
+
+  .author-mobile-bg h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .author-mobile-bg p {
+    font-size: 15px;         /* ⬅️ текст меньше */
+    line-height: 1.45;
+    margin-bottom: 12px;
+    opacity: 0.9;
+  }
+
+  .author-mobile-bg ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    gap: 6px;
+  }
+
+  .author-mobile-bg ul li {
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  .author-mobile-bg ul li::before {
+    content: "✔";
+    margin-right: 6px;
+    color: #ffb347;
+  }
+
+  /* ФОТКА — ФОН С ГЛУБИНОЙ */
+  .author-mobile-bg .author-photo img {
+    position: absolute;
+    right: -20px;
+    bottom: 10px;
+    width: 170px;
+    height: auto;
+    z-index: 1;
+    border: none !important;        /* ⬅️ УБИРАЕМ ЛИНИЮ */
+    border-radius: 0 !important;    /* ⬅️ убираем ощущение блока */
+    box-shadow: none;               /* ⬅️ ес
+
+    /* ⬇️ ЭФФЕКТ ГЛУБИНЫ */
+    filter: drop-shadow(0 0 25px rgba(255,180,80,0.35))
+            drop-shadow(0 20px 40px rgba(0,0,0,0.45));
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* больше воздуха после линии */
+  .author-mobile-bg {
+    padding-bottom: 120px;
+  }
+
+  /* блок "До / После" ниже */
+  .comparison-row {
+    margin-top: 60px;
+  }
+
+}
+
+
+/* ============================= */
+/* AUTHOR — DESKTOP VERSION FULL */
+/* ============================= */
+.author-mobile-bg {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+    padding: 120px 0 140px;
+    margin-top: 120px;
+    background: transparent;
+    overflow: visible;
+}
+
+/* ТЕКСТОВАЯ ЧАСТЬ */
+.author-mobile-bg .author-text {
+    max-width: 560px;
+    position: relative;
+    z-index: 2;
+}
+
+.author-mobile-bg h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.author-mobile-bg p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+    opacity: 0.9;
+}
+
+.author-mobile-bg ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.author-mobile-bg ul li {
+    font-size: 16px;
+    position: relative;
+    padding-left: 26px;
+}
+
+.author-mobile-bg ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ffb347;
+}
+
+/* ФОТО СПРАВА */
+.author-mobile-bg .author-photo {
+    position: relative;
+    justify-self: end;
+}
+
+.author-mobile-bg .author-photo img {
+    width: 520px;
+    max-width: 42vw;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    filter:
+      drop-shadow(0 0 40px rgba(255,160,80,0.45))
+      drop-shadow(0 30px 70px rgba(0,0,0,0.55));
+    display: block;
+}
+
+/* Линия под фото на всю ширину экрана */
+.author-mobile-bg .author-photo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px; /* чуть ниже фото */
+    width: 100vw;  /* на всю ширину экрана */
+    height: 12px;  /* толщина линии */
+    background: linear-gradient(90deg, #ffb347, #ff3b2f, #ffb347);
+    border-radius: 6px;
+    z-index: 1;
+    box-shadow: none; /* убираем лишнее свечение */
+}
+
+/* Мягкий оранжевый фон-свечение позади фото (аккуратно) */
+.author-mobile-bg::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(
+      circle,
+      rgba(255,170,90,0.35),
+      transparent 65%
+    );
+    z-index: 0;
+    pointer-events: none;
 }
