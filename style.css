@@ -740,105 +740,115 @@ p { color: rgba(255,255,255,0.88); }
 /* ============================= */
 /* AUTHOR — DESKTOP VERSION FULL */
 /* ============================= */
-.author-mobile-bg {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 60px;
-    align-items: center;
-    padding: 120px 0 140px;
-    margin-top: 120px;
-    background: transparent;
-    overflow: visible;
-}
+@media (min-width: 1025px) {
+    .author-mobile-bg {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 60px;
+        align-items: center;
+        padding: 120px 0 140px;
+        margin-top: 120px;
+        background: transparent;
+        overflow: visible;
+    }
 
-/* ТЕКСТОВАЯ ЧАСТЬ */
-.author-mobile-bg .author-text {
-    max-width: 560px;
-    position: relative;
-    z-index: 2;
-}
+    /* ТЕКСТОВАЯ ЧАСТЬ */
+    .author-mobile-bg .author-text {
+        max-width: 560px;
+        position: relative;
+        z-index: 2;
+    }
 
-.author-mobile-bg h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
+    .author-mobile-bg h2 {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
 
-.author-mobile-bg p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 22px;
-    opacity: 0.9;
-}
+    .author-mobile-bg p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 22px;
+        opacity: 0.9;
+    }
 
-.author-mobile-bg ul {
-    list-style: none;
-    padding-left: 0;
-    display: grid;
-    gap: 12px;
-}
+    .author-mobile-bg ul {
+        list-style: none;
+        padding-left: 0;
+        display: grid;
+        gap: 12px;
+    }
 
-.author-mobile-bg ul li {
-    font-size: 16px;
-    position: relative;
-    padding-left: 26px;
-}
+    .author-mobile-bg ul li {
+        font-size: 16px;
+        position: relative;
+        padding-left: 26px;
+    }
 
-.author-mobile-bg ul li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #ffb347;
-}
+    .author-mobile-bg ul li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #ffb347;
+    }
 
-/* ФОТО СПРАВА */
-.author-mobile-bg .author-photo {
-    position: relative;
-    justify-self: end;
-}
+    /* ФОТО СПРАВА */
+    .author-mobile-bg .author-photo {
+        position: relative;
+        justify-self: end;
+    }
 
-.author-mobile-bg .author-photo img {
-    width: 520px;
-    max-width: 42vw;
-    height: auto;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    filter:
-      drop-shadow(0 0 40px rgba(255,160,80,0.45))
-      drop-shadow(0 30px 70px rgba(0,0,0,0.55));
-    display: block;
-}
+    .author-mobile-bg .author-photo img {
+        width: 520px;
+        max-width: 42vw;
+        height: auto;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        filter:
+          drop-shadow(0 0 40px rgba(255,160,80,0.45))
+          drop-shadow(0 30px 70px rgba(0,0,0,0.55));
+        display: block;
+    }
 
-/* Линия под фото на всю ширину экрана */
-.author-mobile-bg .author-photo::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px; /* чуть ниже фото */
-    width: 100vw;  /* на всю ширину экрана */
-    height: 12px;  /* толщина линии */
-    background: linear-gradient(90deg, #ffb347, #ff3b2f, #ffb347);
-    border-radius: 6px;
-    z-index: 1;
-    box-shadow: none; /* убираем лишнее свечение */
-}
+    /* Линия под фото на всю ширину экрана */
+    .author-mobile-bg .author-photo::after {
+        content: "";
+        position: absolute;
+        left: -1200px;
+        bottom: -6px; /* чуть ниже фото */
+        width: 130vw;  /* на всю ширину экрана */
+        height: 12px;  /* толщина линии */
+        background: linear-gradient(90deg, #ffb347, #ff3b2f, #ffb347);
+        border-radius: 6px;
+        z-index: 1;
+        box-shadow: none; /* убираем лишнее свечение */
+    }
 
-/* Мягкий оранжевый фон-свечение позади фото (аккуратно) */
-.author-mobile-bg::before {
-    content: "";
-    position: absolute;
-    right: -120px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 520px;
-    height: 520px;
-    background: radial-gradient(
-      circle,
-      rgba(255,170,90,0.35),
-      transparent 65%
-    );
-    z-index: 0;
-    pointer-events: none;
+    /* Мягкий оранжевый фон-свечение позади фото (аккуратно) */
+    .author-mobile-bg::before {
+        content: "";
+        position: absolute;
+        right: -120px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 520px;
+        height: 520px;
+        background: radial-gradient(
+          circle,
+          rgba(255,170,90,0.35),
+          transparent 65%
+        );
+        z-index: 0;
+        pointer-events: none;
+    }
+}
+/* ============================= */
+/* FIX: DISABLE DESKTOP LINE ON MOBILE */
+/* ============================= */
+@media (max-width: 768px) {
+  .author-mobile-bg .author-photo::after {
+    display: none;
+  }
 }
