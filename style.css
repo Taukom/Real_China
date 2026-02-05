@@ -9,8 +9,10 @@
     padding: 0;
 }
 
+
 html {
-    scroll-behavior: smooth;
+    height: 100%;
+    background: #120504; /* основной темный тон сайта */
 }
 
 body {
@@ -2115,6 +2117,7 @@ p { color: rgba(255,255,255,0.88); }
     min-width: 100px;
     box-shadow: 0 6px 14px rgba(255,120,0,0.35);
 }
+
 
 
 
