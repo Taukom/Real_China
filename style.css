@@ -662,8 +662,13 @@ p { color: rgba(255,255,255,0.88); }
     bottom: 0px;
     left: 0;
     width: 100%;
-    height: 12px;
-    background: #ffb347;
+    height: 10px;
+     background: linear-gradient(
+        90deg,
+        #fff7eb,  /* почти белый с оранжевым оттенком */
+        #ffd3a1,  /* светло-оранжевый */
+        #fff7eb   /* снова почти белый для плавности */
+    );
   }
 
   /* ТЕКСТОВАЯ ЧАСТЬ */
@@ -710,7 +715,7 @@ p { color: rgba(255,255,255,0.88); }
     position: absolute;
     right: -20px;
     bottom: 10px;
-    width: 170px;
+    width: 240px;
     height: auto;
     z-index: 1;
     border: none !important;        /* ⬅️ УБИРАЕМ ЛИНИЮ */
@@ -729,7 +734,7 @@ p { color: rgba(255,255,255,0.88); }
 
   /* больше воздуха после линии */
   .author-mobile-bg {
-    padding-bottom: 120px;
+    padding-bottom: 180px;
   }
 
   /* блок "До / После" ниже */
@@ -878,6 +883,7 @@ p { color: rgba(255,255,255,0.88); }
     margin-bottom: 20px;
     padding-bottom: 18px;
     border-bottom: 1px solid rgba(255,255,255,0.18);
+
   }
 
 }
@@ -983,3 +989,1125 @@ p { color: rgba(255,255,255,0.88); }
 
 
 
+/* ============================= */
+/* WHAT YOU GET */
+/* ============================= */
+
+.what-you-get {
+  max-width: 1100px;
+}
+
+.get-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.get-card {
+  position: relative;
+  padding: 36px 34px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.get-step {
+  position: absolute;
+  top: 26px;
+  right: 30px;
+  font-size: 46px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.06);
+}
+
+.get-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  max-width: 85%;
+}
+
+.get-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.get-card ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.get-card ul li {
+  font-size: 15px;
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+}
+
+.get-card ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  opacity: 0.6;
+}
+
+.get-card .muted {
+  opacity: 0.7;
+  margin-top: 12px;
+}
+
+.get-card.accent {
+  background: linear-gradient(
+    135deg,
+    rgba(255,160,80,0.18),
+    rgba(255,80,40,0.2)
+  );
+  border: none;
+}
+
+.get-card.accent .strong {
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+@media (max-width: 768px) {
+
+  .get-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .get-card {
+    padding: 30px 24px;
+  }
+
+  .get-step {
+    font-size: 38px;
+    top: 18px;
+    right: 22px;
+  }
+
+  .get-card h3 {
+    font-size: 18px;
+  }
+
+  .get-card p,
+  .get-card ul li {
+    font-size: 15px;
+  }
+
+}
+.hero-left {
+    text-align: center;
+}
+.hero-title,
+.hero-sub {
+    text-align: center;
+}
+
+
+
+
+
+
+
+.price-compare {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 16px; /* отступы от стенок */
+    text-align: center;
+}
+
+/* заголовки */
+.compare-title {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.compare-sub {
+    font-size: 15px;
+    opacity: 0.75;
+    margin-bottom: 40px;
+}
+
+/* список блоков */
+.compare-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* большой блок */
+.compare-card {
+    display: flex;
+    gap: 20px;
+    padding: 18px;
+    border-radius: 20px;
+    background: linear-gradient(
+        180deg,
+        rgba(255,160,90,0.18),
+        rgba(255,120,40,0.12)
+    );
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.08),
+        0 10px 28px rgba(0,0,0,0.22);
+}
+
+/* элемент */
+.compare-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* картинка — ПОЛНАЯ, без обрезки */
+.compare-item img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* блок цены — одинаковый везде */
+.price-badge {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        #ff9a3c,
+        #ff6a00
+    );
+    color: #fff;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    box-shadow: 0 6px 14px rgba(255,120,0,0.35);
+}
+
+/* подпись */
+.price-label {
+    font-size: 10px;
+    opacity: 0.85;
+    letter-spacing: 0.4px;
+}
+
+/* цена */
+.price-value {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* нижний текст */
+.compare-footer {
+    margin-top: 36px;
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+/* 📱 МОБИЛА */
+@media (max-width: 768px) {
+    .price-compare {
+        padding: 0 14px;
+    }
+
+    .compare-card {
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .compare-item img {
+        height: 150px;
+    }
+
+    .price-value {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+/* линия с текстом + свечение */
+.glow-divider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0 40px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.glow-divider::before,
+.glow-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.45);
+}
+
+.glow-divider::before {
+    margin-right: 18px;
+}
+.glow-divider::after {
+    margin-left: 18px;
+}
+
+.glow-divider span {
+    position: relative;
+    padding: 6px 14px;
+    z-index: 2;
+}
+
+.glow-divider span::before {
+    content: "";
+    position: absolute;
+    inset: -18px -32px;
+    background: radial-gradient(
+        circle,
+        rgba(255,150,60,0.45),
+        rgba(255,150,60,0.15),
+        transparent 70%
+    );
+    filter: blur(6px);
+    z-index: -1;
+    border-radius: 999px;
+}
+
+.glow-divider.small {
+    margin: 36px 0 24px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .glow-divider {
+        margin: 40px 0 28px;
+        font-size: 14px;
+    }
+
+    .glow-divider span::before {
+        inset: -14px -24px;
+    }
+}
+
+
+
+
+/* ============================= */
+/* PRICE COMPARE — GLOW TEXT */
+.price-compare .compare-title,
+.price-compare .compare-sub {
+    position: relative;
+    z-index: 1; /* текст поверх свечения */
+}
+
+/* Свечение */
+.price-compare .compare-title::before,
+.price-compare .compare-sub::before {
+    content: "";
+    position: absolute;
+    top: -10px;   /* немного выше текста */
+    left: -20px;  /* немного левее */
+    right: -20px; /* немного правее */
+    bottom: -10px; /* немного ниже */
+    background: radial-gradient(
+        circle,
+        rgba(255,180,80,0.5) 0%,
+        rgba(255,180,80,0.15) 50%,
+        transparent 100%
+    );
+    filter: blur(48px);  /* увеличиваем размытость для большего свечения */
+    z-index: -1;
+    border-radius: 16px;
+}
+
+.price-value {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(255,180,80,0.8), 0 0 12px rgba(255,140,40,0.6);
+}
+
+
+
+
+
+
+
+/* ============================= */
+/* СВЕЧЕНИЕ И ГРАДИЕНТ ДЛЯ КАРТОЧЕК */
+/* ============================= */
+.compare-card {
+    position: relative; /* чтобы свечение было позади */
+    z-index: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255,200,120,0.18),
+        rgba(255,140,60,0.12)
+    );
+}
+
+/* Сильное свечение сзади карточки */
+.compare-card::before {
+    content: "";
+    position: absolute;
+    inset: -20px; /* чтобы свечение выходило за пределы карточки */
+    background: radial-gradient(
+        circle,
+        rgba(255,180,60,0.35),
+        rgba(255,140,40,0.15),
+        transparent 80%
+    );
+    filter: blur(40px); /* делаем мягким и большим */
+    z-index: -1; /* за карточкой */
+    border-radius: 22px; /* повторяем скругление карточки */
+}
+
+/* Для мобильных чуть уменьшаем свечение */
+@media (max-width: 768px) {
+    .compare-card::before {
+        inset: -12px;
+        filter: blur(28px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ============================= */
+/* КАРТОЧКИ ДЛЯ КОГО И ЧТО БУДЕТ */
+/* ============================= */
+.audience {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 16px;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.audience-card {
+    position: relative;
+    background: linear-gradient(
+        180deg,
+        rgba(255,120,60,0.12),
+        rgba(255,80,40,0.08)
+    );
+    border-radius: 26px;
+    padding: 26px 20px;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.45),
+        0 0 60px rgba(255,120,60,0.15);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.audience-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.5),
+        0 0 80px rgba(255,120,60,0.25);
+}
+
+/* мягкое внешнее свечение */
+.audience-card::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(255,120,60,0.25),
+        transparent 60%
+    );
+    filter: blur(50px);
+    z-index: -1;
+    border-radius: 26px;
+}
+
+/* Заголовок внутри карточки */
+.card-header {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+
+    /* усиленное свечение и градиент */
+    background: linear-gradient(90deg, #fff, #ffd1a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.85),
+        0 0 12px rgba(255, 200, 120, 0.6),
+        0 0 24px rgba(255, 150, 50, 0.4);
+
+    border-bottom: 1px solid rgba(255,180,120,0.3);
+}
+
+/* Контент внутри карточки */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.card-line {
+    font-size: 15px;
+    color: #fff;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,180,120,0.2);
+    line-height: 1.4;
+}
+
+/* Последняя линия без линии снизу */
+.card-line:last-child {
+    border-bottom: none;
+}
+
+/* 📱 Мобильная адаптация */
+@media (max-width: 768px) {
+    .audience-card {
+        padding: 18px 16px;
+    }
+
+    .card-header {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        text-shadow:
+            0 0 4px rgba(255, 255, 255, 0.85),
+            0 0 10px rgba(255, 200, 120, 0.6),
+            0 0 16px rgba(255, 150, 50, 0.4);
+    }
+
+    .card-line {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
+
+
+
+
+
+
+/* ============================= */
+/* ===== REVIEWS ===== */
+/* ============================= */
+.reviews-box {
+    position: relative;
+    padding: 40px 38px 60px;
+    border-radius: 26px;
+
+    /* градиент как у learning-box, но чуть теплее / красноватее */
+    background: linear-gradient(
+        180deg,
+        rgba(255, 140, 60, 0.15),
+        rgba(255, 60, 20, 0.08)
+    );
+
+    border: 1px solid rgba(255, 180, 120, 0.22);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35),
+        0 0 60px rgba(255, 100, 40, 0.15);
+
+    color: #fff;
+    overflow: hidden;
+}
+
+/* мягкое свечение сзади */
+.reviews-box::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 100, 40, 0.25),
+        transparent 60%
+    );
+    filter: blur(50px);
+    z-index: -1;
+}
+
+
+/* заголовок */
+.reviews-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff; /* исправил на правильный белый */
+    margin-bottom: 36px;
+
+    /* лёгкое свечение */
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 50px rgba(255, 255, 255, 0.4);
+
+    /* альтернативно, для более мягкого эффекта */
+    /* filter: drop-shadow(0 0 4px rgba(255,255,255,0.5)); */
+}
+
+
+/* сетка */
+.review-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; /* больше расстояние между отзывами */
+}
+
+/* карточка */
+.review-item {
+    position: relative;
+    padding-top: 10px; /* минимальный, чтобы имя не упиралось */
+}
+
+/* имя — теперь привязано К КАРТОЧКЕ, а не к верху */
+.review-name {
+    position: absolute;
+    top: -20px;            /* почти как было, не лезет вверх */
+    left: 18px;
+
+    padding: 6px 14px;     /* было меньше — теперь чуть «мяснее» */
+    font-size: 12.5px;     /* слегка крупнее */
+    font-weight: 600;
+
+    color: #1a1f2a;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    z-index: 3;
+    white-space: nowrap;
+}
+
+
+/* изображение */
+.review-item img {
+    width: 100%;
+    border-radius: 22px;
+    background: #ffffff;
+    padding: 12px;
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.15),
+        0 0 38px rgba(255, 140, 0, 0.25);
+}
+
+/* ============================= */
+/* 📱 MOBILE */
+/* ============================= */
+
+@media (max-width: 900px) {
+    .reviews-box {
+        padding: 40px 26px 64px;
+        margin-bottom: 42px;
+    }
+
+    .review-images {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .review-item {
+        padding-top: 8px;
+    }
+
+    .review-name {
+        top: -16px;
+        left: 14px;
+        font-size: 10.5px;
+        padding: 3px 9px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* bonus+format */
+/* ===== FORMAT & BONUSES ===== */
+
+.learning-format {
+    position: relative;
+}
+
+/* заголовки */
+.learning-title {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+/* основной контейнер */
+.learning-box {
+    position: relative;
+    padding: 34px 36px;
+    border-radius: 26px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(255, 170, 90, 0.12),
+        rgba(255, 80, 40, 0.08)
+    );
+
+    border: 1px solid rgba(255, 200, 150, 0.22);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.45),
+        0 0 60px rgba(255,120,60,0.15);
+}
+
+/* слабое внешнее свечение */
+.learning-box::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 120, 60, 0.25),
+        transparent 60%
+    );
+    filter: blur(50px);
+    z-index: -1;
+}
+
+/* список */
+.learning-list {
+    list-style: none;
+    display: grid;
+    gap: 16px;
+}
+
+/* пункты */
+.learning-list li {
+    padding: 14px 18px;
+    border-radius: 14px;
+
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.12);
+
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+/* бонусы — чуть ярче */
+.learning-list.bonus li {
+    background: rgba(0,0,0,0.35);
+    border-color: rgba(255,180,120,0.25);
+}
+
+/* разделитель между формат / бонусы */
+.learning-divider {
+    margin: 46px auto;
+    width: 60%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+}
+
+/* 📱 mobile */
+@media (max-width: 768px) {
+    .learning-box {
+        padding: 26px 20px;
+    }
+
+    .learning-list li {
+        font-size: 15px;
+        padding: 12px 14px;
+    }
+
+    .learning-divider {
+        width: 80%;
+        margin: 36px auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.payment-block {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 40px 25px;
+  border-radius: 28px;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,140,0,0.12), rgba(255,180,80,0.05));
+  box-shadow: 0 0 80px rgba(0,0,0,15), 0 0 160px rgba(255,140,0,0.2); /* чуть темнее */
+}
+
+.payment-block::before {
+  content: "";
+  position: absolute;
+  inset: -40px; /* увеличили свечение по бокам */
+  background: radial-gradient(circle, rgba(255,140,0,0.35), rgba(0,0,0,0.05) 70%);
+  filter: blur(100px); /* большое рассеянное свечение */
+  z-index: -1;
+  border-radius: 28px;
+}
+
+.payment-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #fff;
+  position: relative;
+}
+
+.payment-title::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  background: radial-gradient(circle, rgba(255,180,80,0.6), rgba(255,140,0,0.15));
+  filter: blur(50px);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.payment-course {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #ffd3a1;
+}
+
+.payment-desc {
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.88);
+}
+
+.payment-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 30px;
+}
+
+.old-price {
+  font-size: 30px; /* больше */
+  margin-left: 12px;
+  margin-bottom: -12px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: line-through;
+}
+
+.new-price {
+  font-size: 56px; /* крупная цена */
+  margin-bottom: -15px;
+  margin-left: 15px;
+  font-weight: 700;
+  color: #ffb347;
+  text-shadow: 0 0 12px rgba(255,180,80,0.8), 0 0 24px rgba(255,140,40,0.6);
+}
+
+.payment-important {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+
+.important-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffb347;
+  margin-bottom: 12px;
+}
+
+.important-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 18px;
+}
+
+.payment-block .btn-outline {
+  border: 1px solid rgba(255,180,120,0.7);
+  color: #ffd3a1;
+}
+
+.payment-block .btn-outline:hover {
+  background: rgba(255,150,80,0.15);
+}
+
+/* Отступы от экрана */
+@media (max-width: 768px) {
+  .payment-block {
+    padding: 30px 15px;
+    margin: 20px; /* небольшой отступ от краёв */
+  }
+
+  .payment-title { font-size: 32px; }
+  .payment-course { font-size: 20px; }
+  .payment-desc { font-size: 15px; }
+  .old-price { font-size: 18px; }
+  .new-price { font-size: 40px; }
+  .important-text { font-size: 16px; }
+  .important-desc { font-size: 14px; }
+  .btn-big { font-size: 20px; padding: 14px 28px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== FAQ ===== *//* ===== FAQ ===== */
+.faq {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #ffb347;
+  text-shadow: 0 0 20px rgba(255,180,80,0.5);
+}
+
+.section-header .lead {
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: 20px 25px; /* увеличили отступы справа и слева */
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  position: relative;
+  border-radius: 12px;
+}
+
+.faq-item h4 {
+  margin: 0;
+  font-size: 20px;
+  transition: color 0.3s;
+  padding-right: 35px; /* отступ от плюса */
+}
+
+.faq-item h4::after {
+  content: '+';
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 24px;
+  transition: transform 0.3s;
+  color: #ffb347;
+}
+
+.faq-item.active h4::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+  opacity: 0;
+  margin-top: 12px;
+  font-size: 15px; /* чуть меньше для длинных текстов */
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+}
+
+.faq-item.active p {
+  max-height: 500px; /* увеличили высоту блока при раскрытии */
+  opacity: 1;
+  padding-right: 10px;
+}
+
+.faq-item.active {
+  box-shadow: 0 0 40px rgba(255,180,80,0.8);
+  background: rgba(189, 92, 13,0.05);
+  transition: all 0.4s;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .section-header h2 { font-size: 28px; }
+  .section-header .lead { font-size: 16px; margin-bottom: 28px; }
+  .faq-item h4 { font-size: 18px; }
+  .faq-item p { font-size: 14px; }
+}
+
+
+
+
+
+
+
+/* ===== ТОЛЬКО ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+    /* Запрет горизонтальной прокрутки */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Подстраховка для всех контейнеров */
+    .container {
+        max-width: 100%;
+        box-sizing: border-box;
+        padding-left: 15px;  /* если нужно небольшое отступление слева */
+        padding-right: 15px; /* и справа */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Карточка */
+.compare-card {
+    display: flex;
+    gap: 20px;
+    padding: 18px;
+    border-radius: 22px;
+    background: linear-gradient(
+        180deg,
+        rgba(255,140,40,0.12),
+        rgba(255,120,30,0.08)
+    );
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.08),
+        0 10px 28px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Свечение за карточкой */
+.compare-card::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(
+        circle,
+        rgba(255,180,60,0.35),
+        rgba(255,140,40,0.15),
+        transparent 80%
+    );
+    filter: blur(40px);
+    z-index: -1;
+    border-radius: 22px;
+}
+
+/* Элемент карточки */
+.compare-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0,0,0,0.05); /* легкий фон, чтобы фото не казалось "плавающим" */
+    border-radius: 16px;
+    padding: 8px;
+}
+
+/* Фото */
+.compare-item img {
+    width: 100%;
+    height: auto; /* сохраняем пропорции */
+    object-fit: contain;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+}
+
+/* Блок цены */
+.price-badge {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        #ff9a3c,
+        #ff6a00
+    );
+    color: #fff;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    box-shadow: 0 6px 14px rgba(255,120,0,0.35);
+}
